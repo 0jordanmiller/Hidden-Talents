@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Header } from "semantic-ui-react";
+import { Header, Grid, Image, Card, Segment, Divider, Icon, List } from "semantic-ui-react";
 import userCheck from "../utils/utilities";
+
 
 class Profile extends Component {
   constructor() {
@@ -36,46 +37,71 @@ class Profile extends Component {
   render() {
 
     return (
-      <div>
-        <br />
-        <Header content={this.state.user.name} as="h1" />
-        <Header content={this.state.user.talent} as="h1" />
-        <Header content={this.state.user.email} as="h1" />
-        <Header content={this.state.user.phone} as="h1" />
-        <Header content={this.state.user.zipcode} as="h1" />
 
-      </div>
+      <Grid divided horizontal>
+      
+        <Grid.Row>
+           <Grid.Column style={{ width: 370}}>
+             <br />
+              <Card style={{ width: 350 }}>
+              <Card.Header  textAlign='center' content= {this.state.user.name}  as='h2' /> 
+                <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' />
+                <Segment textAlign='center' vertical content={this.state.user.talent} as="h3" />
+                <Card.Description  textAlign='left' style={{ margin: 10 }} content={this.state.user.bio} />
+                 <Divider section style={{marginTop: -5}}/>
+                <Card.Content extra>
+                  <List>
+                    <List.Item>
+                     <List.Icon name='mail' />
+                     <List.Content>{this.state.user.email} </List.Content> 
+                    </List.Item>
+                    <List.Item>
+                     <List.Icon name='marker' />
+                     <List.Content>{this.state.user.zipcode} </List.Content> 
+                    </List.Item>
+                    <List.Item>
+                     <List.Icon name='phone' />
+                     <List.Content>{this.state.user.phone} </List.Content> 
+                    </List.Item>
+                  </List>
+                </Card.Content>
+
+              </Card>
+             
+          </Grid.Column>
+
+            {/* <Grid.Row style= {{width: 250, padding: 20,  }}>
+                <Segment>
+                    <Header>Contact Info</Header>
+                </Segment>
+                   <Segment  textAlign='left' vertical content={this.state.user.email} as="" />  
+                   <Segment color='red'  textAlign='left' vertical content={this.state.user.phone} as="" />
+                   <Segment textAlign='left' vertical content={this.state.user.zipcode} as="" />
+            </Grid.Row> */}
+        </Grid.Row>
+        
+        </Grid>
+        
+  
+         
+         
+    
+        
+     
+
+      
+       /* <div>
+       <br />
+        <Header content={this.state.user.name} as="h1" />
+       <Header content={this.state.user.talent} as="h1" />
+        <Header content={this.state.user.email} as="h1" />
+         <Header content={this.state.user.phone} as="h1" />
+       <Header content={this.state.user.zipcode} as="h1" />
+
+       </div> */
     );
   }
 }
 
 export default Profile;
 
-// <Card>
-//     <Image src='../images/placeholder.png' />
-//     <Card.Content>
-//     <Card.Header>Profile1</Card.Header>
-//     <Divider />
-//     <Card.Description>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like</Card.Description>
-//     {/* <Header as='h2' style={style.h2} textAlign='center'/> */}
-
-//     <Segment.Group horizontal raised>
-//     <Segment>Web Developer</Segment>
-//     </Segment.Group>
-//     </Card.Content>
-//     <Divider />
-
-//     <Header size='large'>Show Us Your Talent</Header>
-
-//     <Grid container columns={3}>
-//         <Grid.Column>
-//             <Image src='../images/placeholder.png' />
-//         </Grid.Column>
-//         <Grid.Column>
-//             <Image src='../images/placeholder.png' />
-//         </Grid.Column>
-//          <Grid.Column>
-//             <Image src='../images/placeholder.png' />
-//         </Grid.Column>
-//     </Grid>
-// </Card>
