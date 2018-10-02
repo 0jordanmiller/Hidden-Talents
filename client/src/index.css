@@ -1,0 +1,44 @@
+body {
+    background-image: url("../src/components/images/background.jpg");
+    position: static;
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    width: 100%;
+    background-color: whitesmoke;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.image1 {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.image2 {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.image3 {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.zip {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.btn {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.ui_bottom_attached_button_btn1 {
+    border-width: 1px;
+    border-style: solid;
+    background-color: #82C66B;
+}

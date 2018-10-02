@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Icon, Container } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
 class Navbar extends Component {
@@ -54,9 +54,12 @@ class Navbar extends Component {
       );
     }
 
-    return (
-      <div>
-        <Menu size={"large"} secondary>
+  return (
+    // <div>
+     
+       <div className='navbar'>
+        <Menu fluid>
+        <br />
           <NavLink to="/">
             <Menu.Item
               name="Home"
@@ -83,8 +86,10 @@ class Navbar extends Component {
             {loginButton}
             {logoutButton}
           </Menu.Menu>
+          <br />
         </Menu>
-      </div>
+     </div>
+  
     );
   }
 }
