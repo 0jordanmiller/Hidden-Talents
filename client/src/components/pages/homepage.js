@@ -39,7 +39,7 @@ class Homepage extends Component {
     this.searchMaps("postal_code");
   }
 
-  handleSearch() {}
+  handleSearch() { }
 
   async verifyUserSession() {
     const userObj = await userCheck();
@@ -65,18 +65,23 @@ class Homepage extends Component {
   // }
 
   //Second part of the Call============
-  // onSearch() {
-  //   console.log(this.state.zipcode);
-  //   axios.post('/search', {
-  //     zipcode: this.state.zipcode
-  //   })/* .then(response => {
-  //     console.log('This is line 55', response);
-  //   }); */
-  // }
+  onSearch() {
+    console.log(this.state.zipcode);
+    axios.get('/search'/* , {
+      zipcode: this.state.zipcode
+    } */).then(response => {
+        // console.log('This is line 55', response.data);
+        this.setState({
+          results: response.data
+        })
+        console.log(this.state);
+      });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchMaps(this.state.search);
+    // this.searchMaps(this.state.search);
+    this.onSearch();
   };
 
   render() {
