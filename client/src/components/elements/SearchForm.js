@@ -1,26 +1,30 @@
 import React from "react";
+import { Button, Icon } from 'semantic-ui-react'
 
 const SearchForm = props => (
-  <form>
+ 
     <div className="form-group">
-      <label htmlFor="search">Search:</label>
+      <div className='zip'>
       <input
         onChange={props.handleInputChange}
         value={props.search}
         name="zipcode"
         type="text"
-        className="form-control"
-        placeholder="Search Zipcode"
+        placeholder="Zipcode"
         id="search"
       />
-      <button
+      </div>
+      <br></br>
+      <div className='btn'>
+      <Button icon labelPosition='right'
         onClick={props.handleFormSubmit}
-        className="btn btn-primary mt-3"
       >
+      <Icon name='angle double right' />
         Search
-      </button>
+      </Button>
+      </div>
     </div>
-  </form>
+ 
 );
 
 export default SearchForm;
