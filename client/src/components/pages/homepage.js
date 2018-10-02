@@ -3,11 +3,11 @@ import axios from "axios";
 import * as Elements from "../elements";
 import userCheck from "../utils/utilities";
 import Categorycard from "../elements/categoryCard";
-import Searchpage from "../elements/searchResults";
-import { Grid, Item, Form } from "semantic-ui-react";
+import { Grid, Form, Image, Button } from "semantic-ui-react";
 import API from "../utils/API";
+import * as Images from '../images';
 
-const categoryNames = ["Tutoring", "Home Improvement", "Music"];
+const categoryNames = ["Tutoring", "Home Improvement", "Web Development"];
 // const categoryDescriptions = ['description', 'description', 'description'];
 
 //User verify==========
@@ -87,13 +87,54 @@ class Homepage extends Component {
   render() {
     return (
       <div>
+        <br>
+        </br>
         <br />
         <Grid centered>
-          <Grid.Row>
-            <Grid.Column width={4}>
-              <Categorycard centered headers={"hi"} />
+        <Grid.Column width={4}>
+            <Image style={{'height':200}} src={Images.E} size='medium' className='image1' rounded /> 
+            <Button className='btn1'
+            attached='bottom'
+            content='Tutoring'
+            onClick={this.handleClick}
+            onKeyPress={this.handleKeyPress}
+          />
+        </Grid.Column>
+        <Grid.Column width={4}>
+            <Image style={{'height':200}} src={Images.A} className='image2' rounded /> 
+            <Button
+            attached='bottom'
+            content='Home Improvement'
+            onClick={this.handleClick}
+            onKeyPress={this.handleKeyPress}
+          />
             </Grid.Column>
-          </Grid.Row>
+            <Grid.Column width={4}>
+            <Image style={{'height':200}} src={Images.C} className='image3' rounded /> 
+            <Button
+            attached='bottom'
+            content='Web Development'
+            onClick={this.handleClick}
+            onKeyPress={this.handleKeyPress}
+          />
+            </Grid.Column>
+          
+        
+
+          {/* <Grid.Row>
+          <Grid.Column width={4}>
+                        <Categorycard centered content />
+                        <Image  src={Images.A} rounded />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                        <Categorycard centered content />
+                        <Image  src={Images.E} rounded />
+                    </Grid.Column>
+                    <Grid.Column width={4}>
+                        <Categorycard centered content />
+                        <Image  src={Images.C} rounded />
+                    </Grid.Column>
+          </Grid.Row> */}
           <Grid.Row>
             <Form>
               <Elements.SearchForm
@@ -109,6 +150,7 @@ class Homepage extends Component {
 
           {/* <Grid.Row><Searchpage /></Grid.Row> */}
         </Grid>
+        
       </div>
     );
   }

@@ -74,6 +74,13 @@ class App extends Component {
     });
   }
 
+  // modalDimmer () {
+  //   state = { open: false }
+
+  //   show = dimmer => () => this.setState({ dimmer, open: true})
+  //   close = () => this.setState({ open: false })
+  // }
+
   render() {
 
     return (
