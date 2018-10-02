@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header } from "semantic-ui-react";
+import { Header, Card, Icon, Image, List, Segment, Popup, Button, Divider, Modal, Grid } from "semantic-ui-react";
 import userCheck from "../utils/utilities";
 
 class Profile extends Component {
@@ -18,6 +18,7 @@ class Profile extends Component {
       }
     };
   }
+ 
 
   componentDidMount() {
     this.verifyUserSession();
@@ -34,15 +35,48 @@ class Profile extends Component {
   }
 
   render() {
-
+  
     return (
       <div>
         <br />
-        <Header content={this.state.user.name} as="h1" />
-        <Header content={this.state.user.talent} as="h1" />
-        <Header content={this.state.user.email} as="h1" />
-        <Header content={this.state.user.phone} as="h1" />
-        <Header content={this.state.user.zipcode} as="h1" />
+
+        <Card fluid>        
+          <Card.Content>
+          <Card.Header content={this.state.user.name} as='h1' />
+          <Divider hidden />
+            <Image floated='left' size='medium' src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' rounded />
+
+         
+                   {/* <Segment clearing floated='right' size='small' >
+                   <Segment> textAlign='right' vertical content={this.state.user.email} as="" </Segment>  
+                   <Segment> textAlign='right' vertical content={this.state.user.phone} as="" </Segment>
+                   </Segment.Group> */}
+            <Card.Description content={this.state.user.talent} as='h3' /> 
+            <Card.Description content={this.state.user.bio} as=''/>
+            
+          </Card.Content>
+       
+          <Image.Group size='small'>
+
+            
+            <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' rounded />
+
+            <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' rounded />
+
+            <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' rounded />
+
+            <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' rounded />
+
+
+          </Image.Group>
+          <Card.Content extra>
+          <Header>Contact Info</Header>
+            <Card.Meta content={this.state.user.email} />
+            <Card.Meta content={this.state.user.phone} />
+            <Card.Meta content={this.state.user.zipcode} />
+          </Card.Content>
+          
+        </Card>
 
       </div>
     );
