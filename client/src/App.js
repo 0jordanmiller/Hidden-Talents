@@ -85,6 +85,7 @@ class App extends Component {
             _logout={this._logout}
           />
           <div className="ui container">
+<<<<<<< HEAD
             <Switch>
               <Route exact path="/" component={Pages.Homepage} />
               <Route
@@ -101,6 +102,24 @@ class App extends Component {
               <Route component={Pages.NoMatch} />
             </Switch>
           </div>
+=======
+          <Switch>
+            <Route exact path="/" component={Pages.Homepage} />
+            <Route
+              exact
+              path="/profile"
+              render={() => <Pages.Profile userData={this.state} />}
+            />
+            <Route exact path="/register" render={() => <Pages.Register />} />
+            <Route
+              exact
+              path="/login"
+              render={() => <Pages.Login _login={this._login} />}
+            />
+            <Route component={Pages.NoMatch} />
+          </Switch>
+        </div>
+>>>>>>> ac1df5a6da9f02dc878443d3d0002891cb7df551
         </div>
       </Router>
     );

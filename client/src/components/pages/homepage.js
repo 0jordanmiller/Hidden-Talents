@@ -86,12 +86,13 @@ class Homepage extends Component {
   render() {
     return (
       <div id='columnContainer'>
-        <br>
-        </br>
-
+        <br />
+        <br />
+              
         <Container textAlign='center' id='title' >
           HIDDEN TALENTS
         </Container>
+<<<<<<< HEAD
 
         <br />
         <br />
@@ -139,21 +140,54 @@ class Homepage extends Component {
 
 
 
+=======
+         <br />
+        <br /> 
 
-          {/* <Grid.Row>
+        <Grid centered>
           <Grid.Column width={4}>
-                        <Categorycard centered content />
-                        <Image  src={Images.A} rounded />
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                        <Categorycard centered content />
-                        <Image  src={Images.E} rounded />
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                        <Categorycard centered content />
-                        <Image  src={Images.C} rounded />
-                    </Grid.Column>
-          </Grid.Row> */}
+          <Image style={{'height':200}} src={Images.E} size='medium' className='image' rounded /> 
+          <Button animated
+            id='btn1'
+            attached='bottom'
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}>
+            <Button.Content visible>Tutoring</Button.Content>
+            <Button.Content hidden>
+            <Icon name='circle outline' />
+            </Button.Content>
+            </Button>
+
+          </Grid.Column>
+          <Grid.Column width={4}>
+          <Image style={{'height':200}} src={Images.A} className='image' rounded /> 
+          <Button animated 
+            id='btn2'
+              attached="bottom"
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}
+            >
+             <Button.Content visible>Home Improvement</Button.Content>
+            <Button.Content hidden>
+            <Icon name='circle outline' />
+            </Button.Content>
+            </Button>
+          </Grid.Column>
+          <Grid.Column width={4}>
+          <Image style={{'height':200}} src={Images.C} className='image' rounded /> 
+          <Button animated
+            id='btn3'
+              attached="bottom"
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}>
+            <Button.Content visible>Web Development</Button.Content>
+            <Button.Content hidden>
+            <Icon name='circle outline' />
+            </Button.Content>
+            </Button>
+>>>>>>> ac1df5a6da9f02dc878443d3d0002891cb7df551
+
+          </Grid.Column>
           <Grid.Row>
             <Form>
               <Elements.SearchForm
