@@ -48,7 +48,7 @@ class Login extends Component {
                     <br />
                     <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
                         <Grid.Column style={{ maxWidth: 450 }}>
-                            <Header as='h2' color='black' textAlign='center'>
+                            <Header as='h2' color='black' textAlign='center' id='header'>
                                 Login to your account
                         </Header>
                             <Form size='huge' id='login'>

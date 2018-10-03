@@ -1,3 +1,5 @@
+
+
 body {
     background-image: url("../src/components/images/background.jpg");
     position: static;
@@ -33,18 +35,22 @@ body {
     border-width: 1px;
     border-style: solid;
     box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    font-family: 'Inconsolata', monospace;
 }
 
 #btn1 {
     background-color: #82C66B;
+    font-family: 'Inconsolata', monospace;
 }
 
 #btn2 {
     background-color: #D85252;
+    font-family: 'Inconsolata', monospace;
 }
 
 #btn3 {
     background-color: #F2E363;
+    font-family: 'Inconsolata', monospace;
 }
 
 #login {
@@ -57,11 +63,20 @@ body {
     background-color: #82C66B;
     border-width: 1px;
     border-style: solid;
+    font-family: 'Inconsolata', monospace;
 }
 
 #title {
     font-size: 53px;
     color: gray;
-    font-family: 'Kodchasan', sans-serif;
+    font-family: 'Inconsolata', monospace;
 } 	
 
+#profileCard {
+    width: 500px;
+    height: 500px;
+}
+
+#header {
+    font-family: 'Inconsolata', monospace;
+}
