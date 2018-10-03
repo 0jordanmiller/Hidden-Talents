@@ -31,8 +31,10 @@ class Navbar extends Component {
     let loggedInNavbar;
     let loginButton;
     let logoutButton;
+    let registerButton;
     if (this.props.isLoggedIn) {
       loggedInNavbar = "You're logged in!";
+
       logoutButton = (
         <Menu.Item
           name="logout"
@@ -51,15 +53,24 @@ class Navbar extends Component {
             onClick={this.handleItemClick}
           />
         </NavLink>
-      );
+      )
+      registerButton = (
+        <NavLink to="/register">
+          <Menu.Item
+            name="Register"
+            active={activeItem === "Register"}
+            onClick={this.handleItemClick}
+          />
+        </NavLink>
+      )
     }
 
-  return (
-    // <div>
-     
-       <div className='navbar'>
-        <Menu fluid>
-        <br />
+    return (
+      // <div>
+
+      <div className='navbar'>
+        <Menu fluid id="menu">
+          <br />
           <NavLink to="/">
             <Menu.Item
               name="Home"
@@ -67,13 +78,7 @@ class Navbar extends Component {
               onClick={this.handleItemClick}
             />
           </NavLink>
-          <NavLink to="/register">
-            <Menu.Item
-              name="Register"
-              active={activeItem === "Register"}
-              onClick={this.handleItemClick}
-            />
-          </NavLink>
+          {registerButton}
           <NavLink to="/profile">
             <Menu.Item
               name="Profile"
@@ -88,8 +93,8 @@ class Navbar extends Component {
           </Menu.Menu>
           <br />
         </Menu>
-     </div>
-  
+      </div>
+
     );
   }
 }
