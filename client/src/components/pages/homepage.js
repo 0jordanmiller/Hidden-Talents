@@ -5,7 +5,7 @@ import userCheck from "../utils/utilities";
 import Categorycard from "../elements/categoryCard";
 import { Grid, Form, Image, Button, Icon, Container, Header } from "semantic-ui-react";
 import API from "../utils/API";
-import * as Images from '../images';
+import * as Images from "../images";
 
 const categoryNames = ["Tutoring", "Home Improvement", "Web Development"];
 // const categoryDescriptions = ['description', 'description', 'description'];
@@ -15,7 +15,7 @@ class Homepage extends Component {
   constructor() {
     super();
     this.verifyUserSession = this.verifyUserSession.bind(this);
-    // this.onSearch = this.onSearch.bind(this);
+    this.onSearch = this.onSearch.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.searchMaps = this.searchMaps.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -39,8 +39,6 @@ class Homepage extends Component {
     this.searchMaps("postal_code");
   }
 
-  handleSearch() {}
-
   async verifyUserSession() {
     const userObj = await userCheck();
   }
@@ -54,7 +52,9 @@ class Homepage extends Component {
 
   searchMaps = query => {
     API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+      .then(res => {
+        this.onSearch(res);
+      })
       .catch(err => console.log(err));
   };
 
@@ -65,18 +65,23 @@ class Homepage extends Component {
   // }
 
   //Second part of the Call============
-  // onSearch() {
-  //   console.log(this.state.zipcode);
-  //   axios.post('/search', {
-  //     zipcode: this.state.zipcode
-  //   })/* .then(response => {
-  //     console.log('This is line 55', response);
-  //   }); */
-  // }
+  onSearch(zipcodeArray) {
+    console.log(zipcodeArray);
+    axios
+      .post("/search", {
+        zipcodes: zipcodeArray
+      })
+      .then(response => {
+        this.setState({
+          results: response
+        });
+        console.log("This is line 55", this.state);
+      });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchMaps(this.state.search);
+    this.searchMaps(this.state.zipcode);
   };
 
   render() {
@@ -84,8 +89,7 @@ class Homepage extends Component {
       <div id='columnContainer'>
         <br>
         </br>
-        <br />
-       
+
         <Container textAlign='center' id='title' >
             HIDDEN TALENTS
         </Container>
@@ -136,6 +140,7 @@ class Homepage extends Component {
           
         
 
+
           {/* <Grid.Row>
           <Grid.Column width={4}>
                         <Categorycard centered content />
@@ -157,9 +162,6 @@ class Homepage extends Component {
                 handleFormSubmit={this.handleFormSubmit}
                 handleInputChange={this.handleChange}
               />
-
-              {/* <Form.Input onChange={this.handleChange} value={this.state.value} label='Zipcode' name='zipcode' placeholder='zipcode' />
-              <Form.Button onClick={this.onSearch}>Submit</Form.Button> */}
             </Form>
           </Grid.Row>
 
