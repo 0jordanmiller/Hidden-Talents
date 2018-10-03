@@ -52,7 +52,9 @@ class Homepage extends Component {
 
   searchMaps = query => {
     API.search(query)
-      .then(res => this.onSearch(res.data.data))
+      .then(res => {
+        this.onSearch(res);
+      })
       .catch(err => console.log(err));
   };
 
@@ -67,13 +69,13 @@ class Homepage extends Component {
     console.log(zipcodeArray);
     axios
       .post("/search", {
-        zipcode: zipcodeArray
+        zipcodes: zipcodeArray
       })
       .then(response => {
-        // this.setState({
-        //   results: response
-        // })
-        console.log("This is line 55", response);
+        this.setState({
+          results: response
+        });
+        console.log("This is line 55", this.state);
       });
   }
 
