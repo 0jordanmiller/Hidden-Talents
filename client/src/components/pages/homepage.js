@@ -5,7 +5,7 @@ import userCheck from "../utils/utilities";
 import Categorycard from "../elements/categoryCard";
 import { Grid, Form, Image, Button } from "semantic-ui-react";
 import API from "../utils/API";
-import * as Images from '../images';
+import * as Images from "../images";
 
 const categoryNames = ["Tutoring", "Home Improvement", "Web Development"];
 // const categoryDescriptions = ['description', 'description', 'description'];
@@ -15,7 +15,7 @@ class Homepage extends Component {
   constructor() {
     super();
     this.verifyUserSession = this.verifyUserSession.bind(this);
-    // this.onSearch = this.onSearch.bind(this);
+    this.onSearch = this.onSearch.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.searchMaps = this.searchMaps.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -39,8 +39,6 @@ class Homepage extends Component {
     this.searchMaps("postal_code");
   }
 
-  handleSearch() {}
-
   async verifyUserSession() {
     const userObj = await userCheck();
   }
@@ -54,7 +52,9 @@ class Homepage extends Component {
 
   searchMaps = query => {
     API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+      .then(res => {
+        this.onSearch(res);
+      })
       .catch(err => console.log(err));
   };
 
@@ -65,56 +65,75 @@ class Homepage extends Component {
   // }
 
   //Second part of the Call============
-  // onSearch() {
-  //   console.log(this.state.zipcode);
-  //   axios.post('/search', {
-  //     zipcode: this.state.zipcode
-  //   })/* .then(response => {
-  //     console.log('This is line 55', response);
-  //   }); */
-  // }
+  onSearch(zipcodeArray) {
+    console.log(zipcodeArray);
+    axios
+      .post("/search", {
+        zipcodes: zipcodeArray
+      })
+      .then(response => {
+        this.setState({
+          results: response
+        });
+        console.log("This is line 55", this.state);
+      });
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchMaps(this.state.search);
+    this.searchMaps(this.state.zipcode);
   };
 
   render() {
     return (
       <div>
-        <br>
-        </br>
+        <br />
         <br />
         <Grid centered>
-        <Grid.Column width={4}>
-            <Image style={{'height':200}} src={Images.E} size='medium' className='image1' rounded /> 
-            <Button className='btn1'
-            attached='bottom'
-            content='Tutoring'
-            onClick={this.handleClick}
-            onKeyPress={this.handleKeyPress}
-          />
-        </Grid.Column>
-        <Grid.Column width={4}>
-            <Image style={{'height':200}} src={Images.A} className='image2' rounded /> 
+          <Grid.Column width={4}>
+            <Image
+              style={{ height: 200 }}
+              src={Images.E}
+              size="medium"
+              className="image1"
+              rounded
+            />
             <Button
-            attached='bottom'
-            content='Home Improvement'
-            onClick={this.handleClick}
-            onKeyPress={this.handleKeyPress}
-          />
-            </Grid.Column>
-            <Grid.Column width={4}>
-            <Image style={{'height':200}} src={Images.C} className='image3' rounded /> 
+              className="btn1"
+              attached="bottom"
+              content="Tutoring"
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}
+            />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Image
+              style={{ height: 200 }}
+              src={Images.A}
+              className="image2"
+              rounded
+            />
             <Button
-            attached='bottom'
-            content='Web Development'
-            onClick={this.handleClick}
-            onKeyPress={this.handleKeyPress}
-          />
-            </Grid.Column>
-          
-        
+              attached="bottom"
+              content="Home Improvement"
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}
+            />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Image
+              style={{ height: 200 }}
+              src={Images.C}
+              className="image3"
+              rounded
+            />
+            <Button
+              attached="bottom"
+              content="Web Development"
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}
+            />
+          </Grid.Column>
 
           {/* <Grid.Row>
           <Grid.Column width={4}>
@@ -137,15 +156,11 @@ class Homepage extends Component {
                 handleFormSubmit={this.handleFormSubmit}
                 handleInputChange={this.handleChange}
               />
-
-              {/* <Form.Input onChange={this.handleChange} value={this.state.value} label='Zipcode' name='zipcode' placeholder='zipcode' />
-              <Form.Button onClick={this.onSearch}>Submit</Form.Button> */}
             </Form>
           </Grid.Row>
 
           {/* <Grid.Row><Searchpage /></Grid.Row> */}
         </Grid>
-        
       </div>
     );
   }
