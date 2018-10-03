@@ -86,11 +86,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-        <Elements.Navbar
+          <Elements.Navbar
             isLoggedIn={this.state.loggedIn}
             _logout={this._logout}
           />
-        <div className="ui container">
+          <div className="ui container">
           <Switch>
             <Route exact path="/" component={Pages.Homepage} />
             <Route
