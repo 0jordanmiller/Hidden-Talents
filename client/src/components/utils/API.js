@@ -1,6 +1,6 @@
-.import axios from "axios";
+import axios from "axios";
 
-const BASEURL = function(query) {
+const BASEURL = function (query) {
   const key =
     "4AMI23anNLS785IAwVUn8UbOHtaBsHkk08q8fQDpdwHhWtIutsD1VZtI2Su2HFOT";
 
@@ -8,10 +8,10 @@ const BASEURL = function(query) {
 };
 
 export default {
-  search: function(query) {
+  search: function (query) {
     const url = BASEURL(query);
 
-    return axios.get(url).then(function(res) {
+    return axios.get(url).then(function (res) {
       return res.data.zip_codes;
     });
   }
