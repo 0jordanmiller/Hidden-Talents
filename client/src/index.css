@@ -42,3 +42,8 @@ body {
     border-style: solid;
     background-color: #82C66B;
 }
+
+.field {
+    width: 200px;
+}
+

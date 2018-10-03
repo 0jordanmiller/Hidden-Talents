@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Form, Button, Input, TextArea, Message, Dropdown } from "semantic-ui-react";
+import { Form, Button, Input, TextArea, Message, Dropdown, Segment, Divider } from "semantic-ui-react";
 
 class Register extends Component {
     constructor() {
@@ -83,32 +83,37 @@ class Register extends Component {
             <div>
                 <br />
                 {passwordMatch}
-                <Form>
-                    <Form.Group>
-                        <Form.Field
+                <Segment color='grey'>
+               <Form>
+
+             <Form.Group>    
+               <Form.Field
                             onChange={this.handleChange}
                             name="name"
                             control={Input}
-                            label="Name"
+                            label="Name" width={5}
                         />
-
-
-                    </Form.Group>
-                    <Dropdown placeholder='Select talent category' name='talent' onChange={this.handleChange} selection options={categories} />
-                    <Form.Group>
-                        <Form.Field
+                        <Form.Field 
                             onChange={this.handleChange}
                             name="username"
                             control={Input}
-                            label="Username"
-                        />
-                        <Form.Field
+                            label="Username" width={5}
+                             />
+
+                         <Dropdown placeholder='Select talent category' name='talent' onChange={this.handleChange} selection options={categories} width={8}/>
+                        
+                         </Form.Group>      
+
+                    <Divider fitted />        
+                   <Form.Group>            
+                    <Form.Field
                             onChange={this.handleChange}
                             name="password"
                             control={Input}
                             label="Password"
                             type='password'
                         />
+
                         <Form.Field
                             onChange={this.handleChange}
                             name="repeat"
@@ -116,49 +121,57 @@ class Register extends Component {
                             label="Confirm Password"
                             type='password'
                         />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Field
+
+                       </Form.Group>  
+
+                         <Divider fitted />
+
+                         <Form.Group>  
+
+                         <Form.Field
                             onChange={this.handleChange}
                             name="phone"
                             control={Input}
                             label="Phone Number"
+                            width={6}
                         />
                         <Form.Field
                             onChange={this.handleChange}
                             name="email"
                             control={Input}
                             label="Email"
+                            width={6}
                         />
                         <Form.Field
                             onChange={this.handleChange}
                             name="zipcode"
                             control={Input}
                             label="Zip Code"
+                            width={6}
                         />
 
-                    </Form.Group>
-                    <Form.Group>
+                       </Form.Group>  
+               </Form>
+               </Segment>
+
+               <Segment color='grey'>
+               <Form.Group>
                         <Form.Field
                             onChange={this.handleChange}
                             name="bio"
                             control={TextArea}
                             label="Bio"
                         />
-                        {/* <Form.Field
-                            onChange={this.handleChange}
-                            name="talent"
-                            control={TextArea}
-                            label="Talents"
-                        /> */}
                     </Form.Group>
-                    <Form.Field
+                        <Form.Field
                         id="form-button-control-public"
                         control={Button}
                         content="Register"
                         onClick={this.handleSubmit}
+                        width={15}
                     />
-                </Form>
+               </Segment>
+                
             </div>
         );
     }
