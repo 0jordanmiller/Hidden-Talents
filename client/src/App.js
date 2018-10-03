@@ -85,11 +85,12 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="ui container">
-          <Elements.Navbar
+        <div>
+        <Elements.Navbar
             isLoggedIn={this.state.loggedIn}
             _logout={this._logout}
           />
+        <div className="ui container">
           <Switch>
             <Route exact path="/" component={Pages.Homepage} />
             <Route
@@ -103,9 +104,9 @@ class App extends Component {
               path="/login"
               render={() => <Pages.Login _login={this._login} />}
             />
-
             <Route component={Pages.NoMatch} />
           </Switch>
+        </div>
         </div>
       </Router>
     );
