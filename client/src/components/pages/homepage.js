@@ -3,7 +3,7 @@ import axios from "axios";
 import * as Elements from "../elements";
 import userCheck from "../utils/utilities";
 import Categorycard from "../elements/categoryCard";
-import { Grid, Form, Image, Button } from "semantic-ui-react";
+import { Grid, Form, Image, Button, Item } from "semantic-ui-react";
 import API from "../utils/API";
 import * as Images from '../images';
 
@@ -91,35 +91,35 @@ class Homepage extends Component {
         </br>
         <br />
         <Grid centered>
-        <Grid.Column width={4}>
-            <Image style={{'height':200}} src={Images.E} size='medium' className='image1' rounded /> 
+          <Grid.Column width={4}>
+            <Image style={{ 'height': 200 }} src={Images.E} size='medium' className='image1' rounded />
             <Button className='btn1'
-            attached='bottom'
-            content='Tutoring'
-            onClick={this.handleClick}
-            onKeyPress={this.handleKeyPress}
-          />
-        </Grid.Column>
-        <Grid.Column width={4}>
-            <Image style={{'height':200}} src={Images.A} className='image2' rounded /> 
+              attached='bottom'
+              content='Tutoring'
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}
+            />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Image style={{ 'height': 200 }} src={Images.A} className='image2' rounded />
             <Button
-            attached='bottom'
-            content='Home Improvement'
-            onClick={this.handleClick}
-            onKeyPress={this.handleKeyPress}
-          />
-            </Grid.Column>
-            <Grid.Column width={4}>
-            <Image style={{'height':200}} src={Images.C} className='image3' rounded /> 
+              attached='bottom'
+              content='Home Improvement'
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}
+            />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Image style={{ 'height': 200 }} src={Images.C} className='image3' rounded />
             <Button
-            attached='bottom'
-            content='Web Development'
-            onClick={this.handleClick}
-            onKeyPress={this.handleKeyPress}
-          />
-            </Grid.Column>
-          
-        
+              attached='bottom'
+              content='Web Development'
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}
+            />
+          </Grid.Column>
+
+
 
           {/* <Grid.Row>
           <Grid.Column width={4}>
@@ -150,7 +150,10 @@ class Homepage extends Component {
 
           {/* <Grid.Row><Searchpage /></Grid.Row> */}
         </Grid>
-        
+        <Item.Group>
+
+        </Item.Group>
+
       </div>
     );
   }
