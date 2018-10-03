@@ -58,7 +58,7 @@ class Navbar extends Component {
     // <div>
      
        <div className='navbar'>
-        <Menu fluid>
+        <Menu fluid id="menu">
         <br />
           <NavLink to="/">
             <Menu.Item
