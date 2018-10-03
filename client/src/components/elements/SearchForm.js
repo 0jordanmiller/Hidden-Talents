@@ -15,8 +15,8 @@ const SearchForm = props => (
       />
       </div>
       <br></br>
-      <div className='btn'>
-      <Button icon labelPosition='right'
+      <div>
+      <Button icon labelPosition='right' id='btn'
         onClick={props.handleFormSubmit}
       >
       <Icon name='angle double right' />

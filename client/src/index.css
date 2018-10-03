@@ -11,34 +11,50 @@ body {
     border-width: 1px;
     border-style: solid;
 }
-
-.image1 {
+#columnContainer .four {
     border-width: 1px;
     border-style: solid;
-}
-
-.image2 {
-    border-width: 1px;
-    border-style: solid;
-}
-
-.image3 {
-    border-width: 1px;
-    border-style: solid;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    padding: 0%;
+    margin: 17px;
+}	
+.image {
+    min-width: 100%;
 }
 
 .zip {
     border-width: 1px;
     border-style: solid;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
 }
 
-.btn {
+#btn {
     border-width: 1px;
     border-style: solid;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
 }
 
-.ui_bottom_attached_button_btn1 {
-    border-width: 1px;
-    border-style: solid;
+#btn1 {
     background-color: #82C66B;
 }
+ #btn2 {
+    background-color: #D85252;
+}
+ #btn3 {
+    background-color: #F2E363;
+}
+#login {
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+}	
+#loginBtn {
+    background-color: #82C66B;
+    border-width: 1px;
+    border-style: solid;
+}
+#title {
+    font-size: 53px;
+    color: gray;
+    font-family: 'Kodchasan', sans-serif;
+} 	

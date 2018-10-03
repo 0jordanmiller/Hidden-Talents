@@ -41,12 +41,14 @@ class Login extends Component {
         height: 100%;
       }
     `}</style>
+     <br />
+    <br />
                 <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
                     <Grid.Column style={{ maxWidth: 450 }}>
-                        <Header as='h2' color='teal' textAlign='center'>
+                        <Header as='h2' color='black' textAlign='center'>
                             Login to your account
                         </Header>
-                        <Form size='huge'>
+                        <Form size='huge' id='login'>
                             <Segment stacked>
                                 <Form.Input name='username' value={this.state.username} onChange={this.handleChange} fluid icon='user' iconPosition='left' placeholder='Username' />
                                 <Form.Input name='password' value={this.state.password} onChange={this.handleChange}
@@ -56,7 +58,7 @@ class Login extends Component {
                                     placeholder='Password'
                                     type='password'
                                 />
-                                <Button onClick={this.handleSubmit} content='Login' color='teal' fluid size='large' />
+                                <Button onClick={this.handleSubmit} content='Login' id='loginBtn' fluid size='large' />
                             </Segment>
                         </Form>
 
