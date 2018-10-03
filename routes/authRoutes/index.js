@@ -10,7 +10,6 @@ router.post(
   },
   passport.authenticate("local"),
   (req, res) => {
-    console.log("POST to /login");
     const user = JSON.parse(JSON.stringify(req.user)); // hack
     const cleanUser = Object.assign({}, user);
     if (cleanUser.local) {
@@ -20,6 +19,7 @@ router.post(
     res.json({ user: cleanUser });
   }
 );
+
 router.get('/auth/user', (req, res, next) => {
   console.log('===== user!!======')
   console.log(req.user)

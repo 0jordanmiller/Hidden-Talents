@@ -36,7 +36,6 @@ class Homepage extends Component {
   //API================
   componentDidMount() {
     this.verifyUserSession();
-    this.searchMaps("postal_code");
   }
 
   async verifyUserSession() {
