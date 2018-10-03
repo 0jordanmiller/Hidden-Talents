@@ -131,29 +131,14 @@ class Homepage extends Component {
             id='btn3'
               attached="bottom"
               onClick={this.handleClick}
-              onKeyPress={this.handleKeyPress}
-            >
+              onKeyPress={this.handleKeyPress}>
             <Button.Content visible>Web Development</Button.Content>
             <Button.Content hidden>
             <Icon name='circle outline' />
             </Button.Content>
             </Button>
-          </Grid.Column>
 
-          {/* <Grid.Row>
-          <Grid.Column width={4}>
-                        <Categorycard centered content />
-                        <Image  src={Images.A} rounded />
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                        <Categorycard centered content />
-                        <Image  src={Images.E} rounded />
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                        <Categorycard centered content />
-                        <Image  src={Images.C} rounded />
-                    </Grid.Column>
-          </Grid.Row> */}
+          </Grid.Column>
           <Grid.Row>
             <Form>
               <Elements.SearchForm
@@ -170,6 +155,8 @@ class Homepage extends Component {
     );
   }
 }
+
+
 
 // const Homepage = (props) => (
 //     <div>

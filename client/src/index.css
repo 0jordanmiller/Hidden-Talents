@@ -6,11 +6,11 @@ body {
 }
 
 .navbar {
-    width: 100%;
     background-color: whitesmoke;
     border-width: 1px;
     border-style: solid;
 }
+
 #columnContainer .four {
     border-width: 1px;
     border-style: solid;
@@ -18,6 +18,7 @@ body {
     padding: 0%;
     margin: 17px;
 }	
+
 .image {
     min-width: 100%;
 }
@@ -37,24 +38,30 @@ body {
 #btn1 {
     background-color: #82C66B;
 }
- #btn2 {
+
+#btn2 {
     background-color: #D85252;
 }
- #btn3 {
+
+#btn3 {
     background-color: #F2E363;
 }
+
 #login {
     border-width: 1px;
     border-style: solid;
     box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
-}	
+}
+
 #loginBtn {
     background-color: #82C66B;
     border-width: 1px;
     border-style: solid;
 }
+
 #title {
     font-size: 53px;
     color: gray;
     font-family: 'Kodchasan', sans-serif;
 } 	
+

@@ -104,7 +104,6 @@ class App extends Component {
               path="/login"
               render={() => <Pages.Login _login={this._login} />}
             />
-
             <Route component={Pages.NoMatch} />
           </Switch>
         </div>

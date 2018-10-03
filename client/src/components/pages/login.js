@@ -41,7 +41,9 @@ class Login extends Component {
         height: 100%;
       }
     `}</style>
+
      <br />
+
     <br />
                 <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
                     <Grid.Column style={{ maxWidth: 450 }}>
