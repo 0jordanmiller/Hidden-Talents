@@ -1,12 +1,13 @@
-// import React from 'react'
+import React from 'react'
 // import { Header, Icon, Divider, Dropdown, Form, TextArea } from 'semantic-ui-react'
+import { Item } from 'semantic-ui-react';
 
 
-// const talentOptions = [
-//     { key: 'web development', text: 'Web Development', value: 'web development' },
-//     { key: 'tutoring', text: 'Tutoring', value: 'tutoring' },
-//     { key: 'home improvement', text: 'Home Improvement', value: 'home improvement' },
-// ]
+const talentOptions = [
+    { key: 'web development', text: 'Web Development', value: 'web development' },
+    { key: 'tutoring', text: 'Tutoring', value: 'tutoring' },
+    { key: 'home improvement', text: 'Home Improvement', value: 'home improvement' },
+]
 
 // const Searchpage = () => (
 //     <div>
@@ -21,5 +22,11 @@
 //     </div>
 // )
 
+const SearchResults = () => (
+    <div>
 
-// export default Searchpage
+    </div>
+)
+
+
+export default SearchResults

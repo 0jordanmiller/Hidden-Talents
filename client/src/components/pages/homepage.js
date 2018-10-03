@@ -36,7 +36,6 @@ class Homepage extends Component {
   //API================
   componentDidMount() {
     this.verifyUserSession();
-    this.searchMaps("postal_code");
   }
 
   async verifyUserSession() {
@@ -91,8 +90,57 @@ class Homepage extends Component {
         <br />
               
         <Container textAlign='center' id='title' >
-            HIDDEN TALENTS
+          HIDDEN TALENTS
         </Container>
+<<<<<<< HEAD
+
+        <br />
+        <br />
+
+        <Grid centered>
+          <Grid.Column width={4}>
+            <Image style={{ 'height': 200 }} src={Images.E} size='medium' className='image' rounded />
+            <Button animated
+              id='btn1'
+              attached='bottom'
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}>
+              <Button.Content visible>Tutoring</Button.Content>
+              <Button.Content hidden>
+                <Icon name='circle outline' />
+              </Button.Content>
+            </Button>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Image style={{ 'height': 200 }} src={Images.A} className='image' rounded />
+            <Button animated
+              id='btn2'
+              attached='bottom'
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}>
+              <Button.Content visible>Home Improvement</Button.Content>
+              <Button.Content hidden>
+                <Icon name='circle outline' />
+              </Button.Content>
+            </Button>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Image style={{ 'height': 200 }} src={Images.C} className='image' rounded />
+            <Button animated
+              id='btn3'
+              attached='bottom'
+              onClick={this.handleClick}
+              onKeyPress={this.handleKeyPress}>
+              <Button.Content visible>Web Development</Button.Content>
+              <Button.Content hidden>
+                <Icon name='circle outline' />
+              </Button.Content>
+            </Button>
+          </Grid.Column>
+
+
+
+=======
          <br />
         <br /> 
 
@@ -137,6 +185,7 @@ class Homepage extends Component {
             <Icon name='circle outline' />
             </Button.Content>
             </Button>
+>>>>>>> ac1df5a6da9f02dc878443d3d0002891cb7df551
 
           </Grid.Column>
           <Grid.Row>
