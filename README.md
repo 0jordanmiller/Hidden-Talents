@@ -29,7 +29,7 @@ their skills to people (individuals and/or businesses) looking for a talent that
 • Using MongoDB Database with Mongoose ORM  
 • You will find both GET and POST routes for retrieving and adding new data
 • Deployed on Heroku
-• New libraries used: Semantic-UI and ------
+• New libraries used: Semantic-UI, Passport, BCrypt, and Zip Code API
 • Involves the authentication of users
 • Polished frontend / UI
 • Contains folder structure that meets MVC Paradigm
