@@ -90,26 +90,26 @@ class Register extends Component {
                 <Segment id='registerSeg' color='grey'>
                <Form>
 
-             <Form.Group>    
+             <Form.Group widths='equal'>    
                <Form.Field
                             onChange={this.handleChange}
                             name="name"
                             control={Input}
-                            label="Name" width={5}
+                            label="Name" w
                         />
                         <Form.Field 
                             onChange={this.handleChange}
                             name="username"
                             control={Input}
-                            label="Username" width={5}
+                            label="Username" 
                              />
 
-                         <Dropdown  placeholder='Select talent category' name='talent' onChange={this.handleChange} selection options={categories} label="Select Your Talent" width={8}/>
+                         <Dropdown  placeholder='Select talent category' name='talent' onChange={this.handleChange} selection options={categories} label="Select Your Talent" />
                         
                          </Form.Group>      
 
                     <Divider fitted />        
-                   <Form.Group>            
+                   <Form.Group widths='equal'>            
                     <Form.Field
                             onChange={this.handleChange}
                             name="password"
@@ -130,28 +130,28 @@ class Register extends Component {
 
                          <Divider fitted />
 
-                         <Form.Group>  
+                         <Form.Group widths='equal'>  
 
                          <Form.Field
                             onChange={this.handleChange}
                             name="phone"
                             control={Input}
                             label="Phone Number"
-                            width={6}
+                           
                         />
                         <Form.Field
                             onChange={this.handleChange}
                             name="email"
                             control={Input}
                             label="Email"
-                            width={6}
+                            
                         />
                         <Form.Field
                             onChange={this.handleChange}
                             name="zipcode"
                             control={Input}
                             label="Zip Code"
-                            width={6}
+                            
                         />
 
                        </Form.Group>  
@@ -159,22 +159,23 @@ class Register extends Component {
                </Segment>
 
                <Segment id='bioSeg' color='grey'>
-               <Form.Group>
+               <Form.Group widths='equal'>
                         <Form.Field 
                             onChange={this.handleChange}
                             name="bio"
                             control={TextArea}
                             label="Bio"
-                            width={6}
+                            id='bio'
                     
                         />
                     </Form.Group>
+                    <br></br>
                         <Form.Field
                         id="form-button-control-public"
                         control={Button}
                         content="Register"
                         onClick={this.handleSubmit}
-                        width={15}
+                        
                     />
                </Segment>
                 
