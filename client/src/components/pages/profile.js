@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Header, Card, Icon, Image, List, Segment, Popup, Button, Divider, Modal, Grid } from "semantic-ui-react";
+import { Header, Card, Icon, Image, List, Segment, Popup, Button, Divider, Modal, Grid, Container, Rail } from "semantic-ui-react";
 import userCheck from "../utils/utilities";
+import * as Images from "../images";
 
 class Profile extends Component {
   constructor() {
@@ -40,17 +41,106 @@ class Profile extends Component {
       <div>
         <br />
 
-        <Card fluid>        
+      
+          <Container className='proContainer' >
+            <Card fluid id='profileCard'>
+             <Card.Content>
+                <Image style={{ 'height': 200 }} src={Images.F} size='medium' className='proImage' floated='left' />
+                <Card.Header content={this.state.user.name} as='h1' />
+              
+                 
+                  <Rail id='railSeg' size='mini' attached position='right'>
+                    <Segment compact id='segContact'> 
+
+                    <Popup
+                      trigger={<Button icon>
+                      <Icon circular name='phone' /> </Button>}
+                      content={this.state.user.phone}
+                      hideOnScroll
+                      position='right center'
+                      />
+
+                      <br />
+
+                      <Popup
+                      trigger={<Button icon>
+                      <Icon circular name='mail' /> </Button>}
+                      content={this.state.user.email}
+                      hideOnScroll
+                      position='right center'
+                      />
+
+                       <br />
+
+                      <Popup
+                      trigger={<Button icon>
+                      <Icon circular name='marker' /> </Button>}
+                      content={this.state.user.zipcode}
+                      hideOnScroll
+                      position='right center'
+                      />
+
+
+                    </Segment>
+                  </Rail> 
+                        <Header>Bio</Header>
+                      <p >
+                        {this.state.user.bio}
+                        </p>
+                        </Card.Content>
+              </Card>
+
+              <Segment id='imageSeg' floated='top right'> 
+            <Grid>
+              <Grid.Row columns={2}>
+              <Grid.Column>
+              <Image src={Images.G}  />
+                </Grid.Column>
+                <Grid.Column>
+              <Image src={Images.H}  />
+                </Grid.Column>
+                <Grid.Column>
+              <Image src={Images.G}  />
+                </Grid.Column>
+                <Grid.Column>
+              <Image src={Images.H}  />
+                </Grid.Column>
+                <Grid.Column>
+              <Image src={Images.G}  />
+                </Grid.Column>
+                <Grid.Column>
+              <Image src={Images.H}  />
+                </Grid.Column>
+                
+                </Grid.Row>
+            </Grid>
+            </Segment>
+            </Container>
+
+
+            {/* <Segment > 
+            <Image.Group size='mini'>
+      <Image src={Images.G}  />
+      <Image src={Images.H}  />
+      <Image src={Images.G} />
+      <Image src={Images.H}  />
+    </Image.Group>
+            </Segment> */}
+
+           
+       
+
+        {/* <Card fluid id='profileCard'>        
           <Card.Content>
           <Card.Header content={this.state.user.name} as='h1' />
-          <Divider hidden />
+         
             <Image floated='left' size='medium' src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' rounded />
 
          
-                   {/* <Segment clearing floated='right' size='small' >
+                  <Segment clearing floated='right' size='small' >
                    <Segment> textAlign='right' vertical content={this.state.user.email} as="" </Segment>  
                    <Segment> textAlign='right' vertical content={this.state.user.phone} as="" </Segment>
-                   </Segment.Group> */}
+                   </Segment>
             <Card.Description content={this.state.user.talent} as='h3' /> 
             <Card.Description content={this.state.user.bio} as=''/>
             
@@ -76,7 +166,7 @@ class Profile extends Component {
             <Card.Meta content={this.state.user.zipcode} />
           </Card.Content>
           
-        </Card>
+        </Card> */}
 
       </div>
     );

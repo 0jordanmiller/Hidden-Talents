@@ -1,3 +1,5 @@
+
+
 body {
     background-image: url("../src/components/images/background.jpg");
     position: static;
@@ -33,18 +35,22 @@ body {
     border-width: 1px;
     border-style: solid;
     box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    font-family: 'Inconsolata', monospace;
 }
 
 #btn1 {
     background-color: #82C66B;
+    font-family: 'Inconsolata', monospace;
 }
 
 #btn2 {
     background-color: #D85252;
+    font-family: 'Inconsolata', monospace;
 }
 
 #btn3 {
     background-color: #F2E363;
+    font-family: 'Inconsolata', monospace;
 }
 
 #login {
@@ -57,11 +63,103 @@ body {
     background-color: #82C66B;
     border-width: 1px;
     border-style: solid;
+    background-color: #82C66B;
+}
+
+.field {
+    width: 200px;
+    font-family: 'Inconsolata', monospace;
 }
 
 #title {
     font-size: 53px;
     color: gray;
-    font-family: 'Kodchasan', sans-serif;
+    font-family: 'Inconsolata', monospace;
 } 	
 
+#profileCard {
+    width: 500px;
+    height: 500px;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    padding: 0%;
+    margin: 17px;
+    font-family: 'Inconsolata', monospace;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#header {
+    font-family: 'Inconsolata', monospace;
+}
+
+.proImage {
+    min-width: 100%;
+}
+
+#icon1 {
+    background-color: #F2E363;
+
+}
+
+#icon2 {
+    background-color: #F2E363;
+
+}
+
+#icon3 {
+    background-color: #F2E363;
+
+}
+
+#segContact {
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    
+}
+
+
+#segCard {
+    width: 500px;
+    height: 500px;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    padding: 0%;
+    margin: 17px;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+
+#imageSeg {
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    width: 300px;
+    height: 250px;
+
+}
+
+#form-button-control-public {
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    font-family: 'Inconsolata', monospace;
+
+}
+
+#registerSeg {
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    width: 550px;
+    height: 270px;
+    border-style: solid;
+    padding: 2%;
+    margin: 17px;
+    font-family: 'Inconsolata', monospace;
+   
+}
+
+#bioSeg {
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    width: 550px;
+    height: 170px;
+    border-style: solid;
+    padding: 2%;
+    margin: 17px;
+    font-family: 'Inconsolata', monospace;
+}

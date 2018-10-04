@@ -90,8 +90,9 @@ class Homepage extends Component {
         <br />
 
         <Container textAlign='center' id='title' >
-          HIDDEN TALENTS
+          .HIDDEN TALENTS.
         </Container>
+
         <br />
         <br />
 
@@ -138,6 +139,12 @@ class Homepage extends Component {
             </Button>
 
           </Grid.Column>
+        
+
+
+
+
+     
           <Grid.Row>
             <Form>
               <Elements.SearchForm
