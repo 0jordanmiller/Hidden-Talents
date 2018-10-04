@@ -158,14 +158,15 @@ class Register extends Component {
                </Form>
                </Segment>
 
-               <Segment color='grey'>
+               <Segment id='bioSeg' color='grey'>
                <Form.Group>
                         <Form.Field 
                             onChange={this.handleChange}
                             name="bio"
                             control={TextArea}
                             label="Bio"
-                            style={{ minHeight: 100 }}
+                            width={6}
+                    
                         />
                     </Form.Group>
                         <Form.Field

@@ -49,7 +49,7 @@ class Profile extends Component {
                 <Card.Header content={this.state.user.name} as='h1' />
               
                  
-                  <Rail size='mini' attached position='right'>
+                  <Rail id='railSeg' size='mini' attached position='right'>
                     <Segment compact id='segContact'> 
 
                     <Popup
