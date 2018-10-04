@@ -74,7 +74,7 @@ class Homepage extends Component {
         this.setState({
           results: response
         });
-        console.log("This is line 55", this.state);
+        console.log("This is line 55", this.state.results);
       });
   }
 
@@ -148,7 +148,7 @@ class Homepage extends Component {
             </Form>
           </Grid.Row>
 
-          {/* <Grid.Row><Searchpage /></Grid.Row> */}
+
         </Grid>
       </div>
     );
