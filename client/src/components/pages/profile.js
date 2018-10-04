@@ -47,7 +47,7 @@ class Profile extends Component {
                 
                 <Card.Content>
                 <Header content={this.state.user.name} as='h2' id='h2'/>
-                <Header as='h5' id='h5'>Talent</Header>
+                <Header as='h5' id='h5'>Talent:</Header>
                   <p>{this.state.talent}</p>
                   <Header as='h4' id='h4'>Contact Info:</Header>
                         <p>{this.state.phone}</p>
