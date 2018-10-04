@@ -40,17 +40,17 @@ class Profile extends Component {
       <div>
         <br />
 
-        <Card fluid>        
+        <Card fluid id='profileCard'>        
           <Card.Content>
           <Card.Header content={this.state.user.name} as='h1' />
-          <Divider hidden />
+         
             <Image floated='left' size='medium' src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' rounded />
 
          
-                   {/* <Segment clearing floated='right' size='small' >
+                  <Segment clearing floated='right' size='small' >
                    <Segment> textAlign='right' vertical content={this.state.user.email} as="" </Segment>  
                    <Segment> textAlign='right' vertical content={this.state.user.phone} as="" </Segment>
-                   </Segment.Group> */}
+                   </Segment>
             <Card.Description content={this.state.user.talent} as='h3' /> 
             <Card.Description content={this.state.user.bio} as=''/>
             
