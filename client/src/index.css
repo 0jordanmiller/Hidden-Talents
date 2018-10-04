@@ -125,6 +125,24 @@ body {
     box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
     width: 300px;
     height: 250px;
-    
+
+}
+
+#form-button-control-public {
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    font-family: 'Inconsolata', monospace;
+
+}
+
+#registerSeg {
+    box-shadow: 4px 4px 11px 1px rgba(0,0,0,0.43);
+    width: 550px;
+    height: 270px;
+    border-style: solid;
+    padding: 2%;
+    margin: 17px;
+    font-family: 'Inconsolata', monospace;
 
 }

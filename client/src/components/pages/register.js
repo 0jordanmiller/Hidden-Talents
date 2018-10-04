@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Form, Button, Input, TextArea, Message, Dropdown, Segment, Divider } from "semantic-ui-react";
+import { Form, Button, Input, TextArea, Message, Dropdown, Segment, Divider, Header } from "semantic-ui-react";
 
 class Register extends Component {
     constructor() {
@@ -83,7 +83,11 @@ class Register extends Component {
             <div>
                 <br />
                 {passwordMatch}
-                <Segment color='grey'>
+                <Header as='h2' color='black' textAlign='center' id='header'>
+                                Register Your Account
+                        </Header>
+
+                <Segment id='registerSeg' color='grey'>
                <Form>
 
              <Form.Group>    
@@ -100,7 +104,7 @@ class Register extends Component {
                             label="Username" width={5}
                              />
 
-                         <Dropdown placeholder='Select talent category' name='talent' onChange={this.handleChange} selection options={categories} width={8}/>
+                         <Dropdown  placeholder='Select talent category' name='talent' onChange={this.handleChange} selection options={categories} label="Select Your Talent" width={8}/>
                         
                          </Form.Group>      
 
@@ -156,11 +160,12 @@ class Register extends Component {
 
                <Segment color='grey'>
                <Form.Group>
-                        <Form.Field
+                        <Form.Field 
                             onChange={this.handleChange}
                             name="bio"
                             control={TextArea}
                             label="Bio"
+                            style={{ minHeight: 100 }}
                         />
                     </Form.Group>
                         <Form.Field
