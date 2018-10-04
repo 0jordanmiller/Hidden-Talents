@@ -42,14 +42,22 @@ class Profile extends Component {
         <br />
 
       
-          <Container className='proContainer' >
             <Card fluid id='profileCard'>
-             <Card.Content>
-                <Image style={{ 'height': 200 }} src={Images.F} size='medium' className='proImage' floated='left' />
-                <Card.Header content={this.state.user.name} as='h1' />
-              
-                 
-                  <Rail id='railSeg' size='mini' attached position='right'>
+                <Image style={{ 'height': 200 }} src={Images.E} size='medium' className='proImage' />
+                
+                <Card.Content>
+                <Header content={this.state.user.name} as='h2' id='h2'/>
+                <Header as='h5' id='h5'>Talent:</Header>
+                  <p>{this.state.talent}</p>
+                  <Header as='h4' id='h4'>Contact Info:</Header>
+                        <p>{this.state.phone}</p>
+                        <p>{this.state.email}</p>
+                      <Header id='header'>Bio:</Header>
+                        <p >
+                        {this.state.user.bio}
+                        </p>
+                        
+                  {/* <Rail id='railSeg' size='mini' attached position='right'>
                     <Segment compact id='segContact'> 
 
                     <Popup
@@ -82,15 +90,14 @@ class Profile extends Component {
 
 
                     </Segment>
-                  </Rail> 
-                        <Header>Bio</Header>
-                      <p >
-                        {this.state.user.bio}
-                        </p>
-                        </Card.Content>
+                  </Rail>  */}
+                  </Card.Content>
+                  
+                        
+                      
               </Card>
 
-              <Segment id='imageSeg' floated='top right'> 
+              {/* <Segment id='imageSeg' floated='top right'> 
             <Grid>
               <Grid.Row columns={2}>
               <Grid.Column>
@@ -114,8 +121,8 @@ class Profile extends Component {
                 
                 </Grid.Row>
             </Grid>
-            </Segment>
-            </Container>
+            </Segment> */}
+          
 
 
             {/* <Segment > 
