@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Icon, Container } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
 class Navbar extends Component {
@@ -28,12 +28,20 @@ class Navbar extends Component {
     // This tells the navbar to render either a login button or a message saying you're logged in
     // console.log(this.props.isLoggedIn);
     const { activeItem } = this.state;
-    let loggedInNavbar;
     let loginButton;
     let logoutButton;
     let registerButton;
+    let profileButton;
     if (this.props.isLoggedIn) {
-      loggedInNavbar = "You're logged in!";
+      profileButton = (
+        <NavLink to="/profile">
+          <Menu.Item
+            name="Profile"
+            active={activeItem === "Profile"}
+            onClick={this.handleItemClick}
+          />
+        </NavLink>
+      );
 
       logoutButton = (
         <Menu.Item
@@ -43,7 +51,6 @@ class Navbar extends Component {
         />
       );
     } else {
-      loggedInNavbar = "Not logged in";
       loginButton = (
         <NavLink to="/login">
           <Menu.Item
@@ -53,7 +60,7 @@ class Navbar extends Component {
             onClick={this.handleItemClick}
           />
         </NavLink>
-      )
+      );
       registerButton = (
         <NavLink to="/register">
           <Menu.Item
@@ -62,13 +69,11 @@ class Navbar extends Component {
             onClick={this.handleItemClick}
           />
         </NavLink>
-      )
+      );
     }
 
     return (
-      // <div>
-
-      <div className='navbar'>
+      <div className="navbar">
         <Menu fluid id="menu">
           <br />
           <NavLink to="/">
@@ -79,22 +84,14 @@ class Navbar extends Component {
             />
           </NavLink>
           {registerButton}
-          <NavLink to="/profile">
-            <Menu.Item
-              name="Profile"
-              active={activeItem === "Profile"}
-              onClick={this.handleItemClick}
-            />
-          </NavLink>
+          {profileButton}
           <Menu.Menu position="right">
-            <Menu.Item content={loggedInNavbar} />
             {loginButton}
             {logoutButton}
           </Menu.Menu>
           <br />
         </Menu>
       </div>
-
     );
   }
 }

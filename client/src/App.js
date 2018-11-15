@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 // import Homepage from './components/pages/homepage';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Components and Pages
 import userCheck from "./components/utils/utilities";
 import * as Pages from "./components/pages";
@@ -56,12 +51,12 @@ class App extends Component {
         this.setState({
           loggedIn: false,
           user: {
-            name: '',
-            bio: '',
-            talent: '',
-            email: '',
-            phone: '',
-            zipcode: ''
+            name: "",
+            bio: "",
+            talent: "",
+            email: "",
+            phone: "",
+            zipcode: ""
           }
         });
       }
@@ -76,15 +71,16 @@ class App extends Component {
   // }
 
   render() {
-
     return (
       <Router>
         <div>
-          <Elements.Navbar
-            isLoggedIn={this.state.loggedIn}
-            _logout={this._logout}
-          />
           <div className="ui container">
+            <Elements.Navbar
+              isLoggedIn={this.state.loggedIn}
+              _logout={this._logout}
+            />
+          </div>
+          <div className="ui container" id="topdiv">
             <Switch>
               <Route exact path="/" component={Pages.Homepage} />
               <Route
@@ -108,7 +104,3 @@ class App extends Component {
 }
 
 export default App;
-
-{
-  /* <Route path='/privacy-policy' component={() => window.location = 'https://example.zendesk.com/hc/en-us/articles/123456789-Privacy-Policies'} /> */
-}
