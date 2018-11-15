@@ -2,14 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import * as Elements from "../elements";
 import userCheck from "../utils/utilities";
-import Categorycard from "../elements/categoryCard";
-import { Grid, Form, Image, Button, Icon, Container, Header } from "semantic-ui-react";
+import { Grid, Form, Header } from "semantic-ui-react";
 import API from "../utils/API";
 import * as Images from "../images";
-import { resolve } from "url";
-
-const categoryNames = ["Tutoring", "Home Improvement", "Web Development"];
-// const categoryDescriptions = ['description', 'description', 'description'];
 
 //User verify==========
 class Homepage extends Component {
@@ -23,7 +18,9 @@ class Homepage extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
     this.state = {
-      loggedIn: null
+      loggedIn: null,
+      resultsIn: false,
+      results: {}
     };
   }
   async verifyUserSession() {
@@ -37,17 +34,13 @@ class Homepage extends Component {
   //API================
   componentDidMount() {
     this.verifyUserSession();
-  }
-
-  async verifyUserSession() {
-    const userObj = await userCheck();
+    console.log(this.state);
   }
 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
     });
-    console.log(this.state);
   }
 
   searchMaps = query => {
@@ -72,20 +65,18 @@ class Homepage extends Component {
         zipcodes: zipcodeArray
       })
       .then(response => {
-
         const promise = new Promise((resolve, reject) => {
           this.setState({
             results: response
           });
           resolve();
-        })
+        });
         promise.then(() => {
           this.setState({
             resultsIn: true
-          })
-        })
-        console.log(this.state.results.data);
-
+          });
+        });
+        console.log(this.state);
       });
   }
 
@@ -95,76 +86,32 @@ class Homepage extends Component {
   };
 
   render() {
-    let results
+    let results;
     if (this.state.resultsIn) {
       results = this.state.results.data.map((object, index) => {
         return (
-          <Grid.Row>
-            <Elements.SearchItem name={object.name} talent={object.talent} talent={object.talent} contact={object.email} bio={object.bio} >  </Elements.SearchItem>
-          </Grid.Row>
-        )
-      })
-
+          <div>
+            <Elements.SearchItem
+              name={object.name}
+              talent={object.talent}
+              contact={object.email}
+              bio={object.bio}
+            />
+            <br />
+          </div>
+        );
+      });
     } else {
-      results = <p>Search results go here</p>
+      results = <p>Search results go here</p>;
     }
 
     return (
-      <div id='columnContainer'>
-        <br />
-        <br />
-
-        <Container textAlign='center' id='title' >
-          .HIDDEN TALENTS.
-        </Container>
-
-        <br />
-        <br />
-
+      <div className="ui container" id="homepage">
         <Grid centered>
           <Grid.Row>
-            <Grid.Column width={4}>
-              <Image style={{ 'height': 200 }} src={Images.E} className='image' rounded />
-              <Button animated
-                id='btn1'
-                attached='bottom'
-                onClick={this.handleClick}
-                onKeyPress={this.handleKeyPress}>
-                <Button.Content visible>Tutoring</Button.Content>
-                <Button.Content hidden>
-                  <Icon name='circle outline' />
-                </Button.Content>
-              </Button>
-
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Image style={{ 'height': 200 }} src={Images.A} className='image' rounded />
-              <Button animated
-                id='btn2'
-                attached="bottom"
-                onClick={this.handleClick}
-                onKeyPress={this.handleKeyPress}
-              >
-                <Button.Content visible>Home Improvement</Button.Content>
-                <Button.Content hidden>
-                  <Icon name='circle outline' />
-                </Button.Content>
-              </Button>
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Image style={{ 'height': 200 }} src={Images.C} className='image' rounded />
-              <Button animated
-                id='btn3'
-                attached="bottom"
-                onClick={this.handleClick}
-                onKeyPress={this.handleKeyPress}>
-                <Button.Content visible>Web Development</Button.Content>
-                <Button.Content hidden>
-                  <Icon name='circle outline' />
-                </Button.Content>
-              </Button>
-
-            </Grid.Column>
+            <Header as="h1" id="title">
+              HIDDEN TALENTS
+            </Header>
           </Grid.Row>
           <Grid.Row>
             <Form>
@@ -175,14 +122,11 @@ class Homepage extends Component {
               />
             </Form>
           </Grid.Row>
-          {results}
-
         </Grid>
+        <Grid>{results}</Grid>
       </div>
     );
   }
 }
 
-
 export default Homepage;
-
